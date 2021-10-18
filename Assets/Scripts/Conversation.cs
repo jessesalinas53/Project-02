@@ -17,5 +17,7 @@ public class Conversation : ScriptableObject
 {
     public Character character_L;
     public Character character_R;
+    public Question question;
+    public Conversation nextConversation;
     public Line[] lines;
 }

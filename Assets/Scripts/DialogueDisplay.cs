@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueDisplay : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class DialogueDisplay : MonoBehaviour
 
     private SpeakerUI character_L_UI;
     private SpeakerUI character_R_UI;
+
+    [SerializeField] Image dialogueBox;
 
     private int activeLineIndex = 0;
     private void Start()
@@ -32,7 +35,8 @@ public class DialogueDisplay : MonoBehaviour
 
     void AdvanceConversation()
     {
-        if(activeLineIndex < conversation.lines.Length)
+        dialogueBox.gameObject.SetActive(true);
+        if (activeLineIndex < conversation.lines.Length)
         {
             DisplayLine();
             activeLineIndex += 1;

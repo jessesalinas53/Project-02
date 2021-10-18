@@ -10,6 +10,7 @@ public class SpeakerUI : MonoBehaviour
     [SerializeField] Text dialogue;
     [SerializeField] Image characterNameImage;
     [SerializeField] Text characterNameText;
+    [SerializeField] Image darkenImage;
 
     private Character character;
     public Character Character
@@ -42,11 +43,14 @@ public class SpeakerUI : MonoBehaviour
         gameObject.SetActive(true);
         characterNameImage.gameObject.SetActive(true);
         characterNameText.gameObject.SetActive(true);
+        darkenImage.gameObject.SetActive(false);
+
     }
     public void Hide()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         characterNameImage.gameObject.SetActive(false);
         characterNameText.gameObject.SetActive(false);
+        darkenImage.gameObject.SetActive(true);
     }
 }
