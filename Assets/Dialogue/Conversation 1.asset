@@ -18,8 +18,8 @@ MonoBehaviour:
   nextConversation: {fileID: 0}
   lines:
   - character: {fileID: 11400000, guid: 00e505d2e34d35c42b099efa570dc2ed, type: 2}
-    text: text 1
+    text: Hello this is sample text.
   - character: {fileID: 11400000, guid: b7bbd32d1f68c0241ae4bc356a4d106d, type: 2}
-    text: text 2
+    text: Oh cool so is this!
   - character: {fileID: 11400000, guid: b7bbd32d1f68c0241ae4bc356a4d106d, type: 2}
-    text: text 3
+    text: And this!

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Make a choice.
   choices:
-  - text: choice a
+  - text: Choice A
     conversation: {fileID: 11400000, guid: 13323cd70ccdf414bb3c201aa3847671, type: 2}
-  - text: choice b
+  - text: Choice B
     conversation: {fileID: 11400000, guid: d33e1a1f36338d64784f9161fce54475, type: 2}
