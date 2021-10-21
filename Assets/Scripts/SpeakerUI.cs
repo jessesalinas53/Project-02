@@ -8,19 +8,20 @@ public class SpeakerUI : MonoBehaviour
     [SerializeField] Image portrait;
     [SerializeField] Text fullName;
     [SerializeField] Text dialogue;
-    [SerializeField] Image characterNameImage;
-    [SerializeField] Text characterNameText;
-    [SerializeField] Image darkenImage;
+    [SerializeField] Image speakerNameImage;
+    [SerializeField] Text speakerNameText;
+    [SerializeField] Image darkenPortrait;
+    [SerializeField] Image darkenName;
 
-    private Character character;
-    public Character Character
+    private Character speaker;
+    public Character Speaker
     {
-        get { return character; }
+        get { return speaker; }
         set
         {
-            character = value;
-            portrait.sprite = character.portrait;
-            fullName.text = character.fullName;
+            speaker = value;
+            portrait.sprite = speaker.portrait;
+            fullName.text = speaker.fullName;
         }
     }
     public string Dialogue
@@ -32,25 +33,27 @@ public class SpeakerUI : MonoBehaviour
     }
     public bool HasSpeaker()
     {
-        return character != null;
+        return speaker != null;
     }
     public bool SpeakerIs(Character speaker)
     {
-        return character == speaker;
+        return this.speaker == speaker;
     }
     public void Show()
     {
         gameObject.SetActive(true);
-        characterNameImage.gameObject.SetActive(true);
-        characterNameText.gameObject.SetActive(true);
-        darkenImage.gameObject.SetActive(false);
+        speakerNameImage.gameObject.SetActive(true);
+        speakerNameText.gameObject.SetActive(true);
+        darkenPortrait.gameObject.SetActive(false);
+        darkenName.gameObject.SetActive(false);
 
     }
     public void Hide()
     {
         //gameObject.SetActive(false);
-        characterNameImage.gameObject.SetActive(false);
-        characterNameText.gameObject.SetActive(false);
-        darkenImage.gameObject.SetActive(true);
+        //speakerNameImage.gameObject.SetActive(false);
+        //speakerNameText.gameObject.SetActive(false);
+        darkenPortrait.gameObject.SetActive(true);
+        darkenName.gameObject.SetActive(true);
     }
 }

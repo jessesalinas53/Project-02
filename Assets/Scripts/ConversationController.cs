@@ -11,8 +11,8 @@ public class ConversationController : MonoBehaviour
     public Conversation conversation;
     public QuestionEvent questionEvent;
 
-    public GameObject character_L;
-    public GameObject character_R;
+    public GameObject speaker_L;
+    public GameObject speaker_R;
 
     private SpeakerUI speakerUI_L;
     private SpeakerUI speakerUI_R;
@@ -29,8 +29,8 @@ public class ConversationController : MonoBehaviour
 
     private void Start()
     {
-        speakerUI_L = character_L.GetComponent<SpeakerUI>();
-        speakerUI_R = character_R.GetComponent<SpeakerUI>();
+        speakerUI_L = speaker_L.GetComponent<SpeakerUI>();
+        speakerUI_R = speaker_R.GetComponent<SpeakerUI>();
     }
 
     private void Update()
@@ -53,8 +53,8 @@ public class ConversationController : MonoBehaviour
     {
         conversationStarted = true;
         activeLineIndex = 0;
-        speakerUI_L.Character = conversation.character_L;
-        speakerUI_R.Character = conversation.character_R;
+        speakerUI_L.Speaker = conversation.character_L;
+        speakerUI_R.Speaker = conversation.character_R;
     }
 
     private void AdvanceLine()

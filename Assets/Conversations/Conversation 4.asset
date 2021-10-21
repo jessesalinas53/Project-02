@@ -17,5 +17,5 @@ MonoBehaviour:
   question: {fileID: 0}
   nextConversation: {fileID: 0}
   lines:
-  - character: {fileID: 0}
-    text: convo 4
+  - character: {fileID: 11400000, guid: 00e505d2e34d35c42b099efa570dc2ed, type: 2}
+    text: Bye!

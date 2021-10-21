@@ -18,4 +18,4 @@ MonoBehaviour:
   nextConversation: {fileID: 11400000, guid: e447bfd733c64e341b7155dc3cd01b0b, type: 2}
   lines:
   - character: {fileID: 11400000, guid: b7bbd32d1f68c0241ae4bc356a4d106d, type: 2}
-    text: convo 3
+    text: Choice B convo

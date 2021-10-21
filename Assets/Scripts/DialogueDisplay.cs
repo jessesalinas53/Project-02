@@ -7,22 +7,23 @@ public class DialogueDisplay : MonoBehaviour
 {
     [SerializeField] Conversation conversation;
 
-    [SerializeField] GameObject character_L;
-    [SerializeField] GameObject character_R;
+    [SerializeField] GameObject speaker_L;
+    [SerializeField] GameObject speaker_R;
 
-    private SpeakerUI character_L_UI;
-    private SpeakerUI character_R_UI;
+    private SpeakerUI speaker_L_UI;
+    private SpeakerUI speaker_R_UI;
 
     [SerializeField] Image dialogueBox;
+    [SerializeField] Text dialogueText;
 
     private int activeLineIndex = 0;
     private void Start()
     {
-        character_L_UI = character_L.GetComponent<SpeakerUI>();
-        character_R_UI = character_R.GetComponent<SpeakerUI>();
+        speaker_L_UI = speaker_L.GetComponent<SpeakerUI>();
+        speaker_R_UI = speaker_R.GetComponent<SpeakerUI>();
 
-        character_L_UI.Character = conversation.character_L;
-        character_R_UI.Character = conversation.character_R;
+        speaker_L_UI.Speaker = conversation.character_L;
+        speaker_R_UI.Speaker = conversation.character_R;
     }
 
     void Update()
@@ -36,6 +37,16 @@ public class DialogueDisplay : MonoBehaviour
     void AdvanceConversation()
     {
         dialogueBox.gameObject.SetActive(true);
+
+        dialogueText.gameObject.SetActive(true);
+
+        /*
+        speaker_L.gameObject.SetActive(true);
+        speaker_L_UI.gameObject.SetActive(true);
+        speaker_R.gameObject.SetActive(true);
+        speaker_R_UI.gameObject.SetActive(true);
+        */
+
         if (activeLineIndex < conversation.lines.Length)
         {
             DisplayLine();
@@ -43,8 +54,8 @@ public class DialogueDisplay : MonoBehaviour
         }
         else
         {
-            character_L_UI.Hide();
-            character_R_UI.Hide();
+            speaker_L_UI.Hide();
+            speaker_R_UI.Hide();
             activeLineIndex = 0;
         }
     }
@@ -54,13 +65,13 @@ public class DialogueDisplay : MonoBehaviour
         Line line = conversation.lines[activeLineIndex];
         Character character = line.character;
 
-        if (character_L_UI.SpeakerIs(character))
+        if (speaker_L_UI.SpeakerIs(character))
         {
-            SetDialogue(character_L_UI, character_R_UI, line.text);
+            SetDialogue(speaker_L_UI, speaker_R_UI, line.text);
         }
         else
         {
-            SetDialogue(character_R_UI, character_L_UI, line.text);
+            SetDialogue(speaker_R_UI, speaker_L_UI, line.text);
         }
     }
 
